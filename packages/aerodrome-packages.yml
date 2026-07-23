@@ -1,0 +1,33 @@
+generated: '2026-07-17'
+method: searched
+source: https://github.com/velodrome-finance/sdk.js
+notes: >-
+  Aerodrome shares its "Sugar" developer SDK with Velodrome (both are built by
+  Dromos Labs). The SDK is an onchain API — it reads pool / veNFT / relay data
+  by calling the Sugar helper contracts and builds UNSIGNED swap / liquidity /
+  stake / claim transactions ({from,to,data,value}); it never holds keys or
+  signs. There is no traditional REST client library because Aerodrome is a
+  smart-contract protocol on Base.
+packages:
+  - language: javascript
+    registry: npm
+    name: "@dromos-labs/sdk.js"
+    url: https://www.npmjs.com/package/@dromos-labs/sdk.js
+    repository: https://github.com/velodrome-finance/sdk.js
+    install: npm install @dromos-labs/sdk.js
+    version: 0.3.0-alpha.3
+    official: true
+    description: >-
+      JavaScript/TypeScript Sugar SDK for Velodrome and Aerodrome — fetch onchain
+      pool/token data and build swap and liquidity transactions.
+  - language: python
+    registry: github
+    name: sugar
+    url: https://github.com/velodrome-finance/sugar-sdk
+    repository: https://github.com/velodrome-finance/sugar-sdk
+    install: pip install git+https://github.com/velodrome-finance/sugar-sdk.git@v0.4.1
+    official: true
+    description: >-
+      Python Sugar SDK (ships a `sugar` CLI backed by python-fire) — paginated
+      LpSugar/VeSugar/RelaySugar reads and unsigned transaction building. Not
+      published to PyPI; installed from GitHub.

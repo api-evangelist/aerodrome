@@ -1,8 +1,29 @@
 aid: aerodrome
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/aerodrome.png
 name: Aerodrome
-description: 'Aerodrome is a company surfaced as a portfolio company of electric-capital and added to
-  the API Evangelist network as a stub for enrichment. Sector: defi. This profile is a lead awaiting the
-  enrichment pipeline.'
+description: >-
+  Aerodrome Finance is the central trading and liquidity marketplace on the Base
+  network — a next-generation MetaDEX (automated market maker inspired by
+  Solidly and Velodrome) that pairs a vote-escrow ve(3,3) tokenomics model with
+  gauge-directed AERO emissions. It offers basic volatile (vAMM) and stable
+  (sAMM) pools plus concentrated-liquidity Slipstream pools, letting liquidity
+  providers, voters, and traders coordinate incentives on Base. Aerodrome is a
+  smart-contract protocol rather than a hosted API: developers integrate through
+  its onchain Solidity contracts, the shared open-source "Sugar" SDK (JavaScript
+  and Python) that reads pool/veNFT/relay data and builds unsigned transactions,
+  and GraphQL subgraphs for analytics. This profile was enriched by the API
+  Evangelist pipeline from public sources.
 url: https://raw.githubusercontent.com/api-evangelist/aerodrome/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -16,6 +37,14 @@ modified: '2026-07-17'
 tags:
 - Company
 - Defi
+- DEX
+- AMM
+- Base
+- Liquidity
+- Blockchain
+- Web3
+- Trading
+- Smart Contracts
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -25,3 +54,30 @@ maintainers:
 common:
 - type: Website
   url: https://aerodrome.finance/
+- type: Documentation
+  url: https://aerodrome.finance/docs
+- type: DeveloperPortal
+  url: https://aerodrome.finance/docs
+- type: GitHubOrganization
+  url: https://github.com/aerodrome-finance
+- type: TermsOfService
+  url: https://aerodrome.finance/documents/AERO/legal-disclosures.pdf
+- type: Packages
+  url: packages/aerodrome-packages.yml
+- type: SDKs
+  url: packages/aerodrome-packages.yml
+- type: MCPServer
+  url: mcp/aerodrome-mcp.yml
+- type: LLMsTxt
+  url: llms/aerodrome-llms.txt
+- type: DomainSecurity
+  url: security/aerodrome-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/aerodrome-vulnerability-disclosure.yml
+- type: Security
+  url: https://aerodrome.finance/security
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

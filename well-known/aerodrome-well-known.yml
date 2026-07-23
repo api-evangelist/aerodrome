@@ -1,0 +1,22 @@
+generated: '2026-07-17'
+method: searched
+host: https://aerodrome.finance
+notes: >-
+  Probed the /.well-known/ discovery surface on the Aerodrome web host. No
+  well-known discovery documents are published (security.txt, OIDC, OAuth AS,
+  ai-plugin all 404) — expected for a smart-contract DeFi protocol with no
+  hosted API auth server. robots.txt is served (200). Absence recorded as valid
+  data; no WellKnown/SecurityTxt scoring pointer wired because nothing was found.
+documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /robots.txt
+    status: 200
