@@ -1,43 +1,47 @@
 generated: '2026-07-17'
 method: searched
-status: community
+status: third-party
+status_raw: community
 source: https://docs.base.org/ai-agents/plugins/native/aerodrome
-notes: >-
-  Aerodrome does not host an official first-party remote MCP server. However a
-  real, documented agent surface exists: Base publishes a NATIVE Aerodrome agent
-  plugin (part of Base MCP) that drives the FIRST-PARTY Velodrome/Aerodrome
-  sugar-sdk to discover pools and build unsigned transactions, routing them
-  through Base MCP `send_calls` for user approval. It runs Python locally in a
-  CLI harness (Claude Code / Codex / Cursor terminal), not chat-only. Several
-  independent community MCP servers targeting Aerodrome are also published to
-  npm. Tools below are the actions exposed by the Base native plugin — grounded
-  in the sugar-sdk, not fabricated.
+notes: 'Aerodrome does not host an official first-party remote MCP server. However a real, documented
+  agent surface exists: Base publishes a NATIVE Aerodrome agent plugin (part of Base MCP) that drives
+  the FIRST-PARTY Velodrome/Aerodrome sugar-sdk to discover pools and build unsigned transactions, routing
+  them through Base MCP `send_calls` for user approval. It runs Python locally in a CLI harness (Claude
+  Code / Codex / Cursor terminal), not chat-only. Several independent community MCP servers targeting
+  Aerodrome are also published to npm. Tools below are the actions exposed by the Base native plugin —
+  grounded in the sugar-sdk, not fabricated.'
 servers:
-  - name: base-mcp-aerodrome-plugin
-    kind: native-plugin
-    publisher: Base (base/skills)
-    transport: stdio
-    reference: https://github.com/base/skills/blob/master/skills/base-mcp/plugins/aerodrome.md
-    built_on: "@dromos-labs/sdk.js / velodrome-finance sugar-sdk"
-    chain: base-mainnet
-    official: false
-  - name: "@iflow-mcp/tairon-ai-aerodrome-finance-mcp"
-    kind: community-mcp-server
-    transport: stdio
-    reference: https://github.com/Tairon-ai/aerodrome-finance-mcp
-    official: false
+- name: base-mcp-aerodrome-plugin
+  kind: native-plugin
+  publisher: Base (base/skills)
+  transport: stdio
+  reference: https://github.com/base/skills/blob/master/skills/base-mcp/plugins/aerodrome.md
+  built_on: '@dromos-labs/sdk.js / velodrome-finance sugar-sdk'
+  chain: base-mainnet
+  official: false
+- name: '@iflow-mcp/tairon-ai-aerodrome-finance-mcp'
+  kind: community-mcp-server
+  transport: stdio
+  reference: https://github.com/Tairon-ai/aerodrome-finance-mcp
+  official: false
 tools:
-  - name: quote_swap
-    description: Generate a swap quote on Aerodrome basic pools.
-  - name: execute_swap
-    description: Build an unsigned swap transaction on Base.
-  - name: add_liquidity
-    description: Deposit liquidity into vAMM / sAMM pools.
-  - name: remove_liquidity
-    description: Withdraw liquidity from vAMM / sAMM pools.
-  - name: query_positions
-    description: Query existing LP and veNFT positions.
-  - name: stake_gauge
-    description: Stake / unstake LP into a gauge.
-  - name: claim_rewards
-    description: Claim gauge emissions and trading fees.
+- name: quote_swap
+  description: Generate a swap quote on Aerodrome basic pools.
+- name: execute_swap
+  description: Build an unsigned swap transaction on Base.
+- name: add_liquidity
+  description: Deposit liquidity into vAMM / sAMM pools.
+- name: remove_liquidity
+  description: Withdraw liquidity from vAMM / sAMM pools.
+- name: query_positions
+  description: Query existing LP and veNFT positions.
+- name: stake_gauge
+  description: Stake / unstake LP into a gauge.
+- name: claim_rewards
+  description: Claim gauge emissions and trading fees.
+deployment:
+  mode: third-party
+  verified: searched
+  tools: 7
+  checked: '2026-08-12'
+  source: catalog MCP census
